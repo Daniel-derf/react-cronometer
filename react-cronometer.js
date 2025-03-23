@@ -3,6 +3,7 @@ import React, { useState, useRef } from "react";
 function useWatch() {
   const [minutes, setMinutes] = useState(0);
   const [seconds, setSeconds] = useState(0);
+
   const intervalRef = useRef(null);
 
   const start = () => {
@@ -17,8 +18,6 @@ function useWatch() {
         return prev + 1;
       });
     }, 1000);
-
-    return () => clearInterval(interval);
   };
 
   const stop = () => {
@@ -57,6 +56,3 @@ export function App(props) {
     </div>
   );
 }
-
-// Log to console
-console.log("Hello console");
